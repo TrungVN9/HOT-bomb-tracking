@@ -1,17 +1,18 @@
 import React, {useState, useEffect} from 'react';
 
 
+
 function SearchBar(props) {
   
   const [searchMessage, setSearchMessage] = useState("");
-  
+
   const handleSubmit  = e => {
     e.preventDefault();
 
     if (searchMessage === "") return;
 
     // query api here
-    console.log(searchMessage);
+    
     props.setQuery(searchMessage);
     setSearchMessage("");
   };
@@ -33,7 +34,7 @@ function SearchBar(props) {
               placeholder = "Search location"
               onChange = {e => handleChange(e)}
           />
-          <button type='submit' class='searchButton'>Search</button>
+          <button type='submit' className='searchButton'>Search</button>
       </form>
       
     </div>
