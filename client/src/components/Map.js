@@ -8,6 +8,7 @@ import { Icon } from "leaflet";
 
 function Map(props) {
   return (
+    
     <div className="map">
       
       <h2>Map goes here :)</h2>
