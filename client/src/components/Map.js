@@ -20,9 +20,7 @@ function Map(props) {
   return (
     
     <div className="map">
-      
-      <h2>Map goes here :)</h2>
-      <MapContainer center={[-118.2439, 34.0544]} zoom={10} scrollWheelZoom={false}>
+        <MapContainer center={[49, 32]} zoom={10} scrollWheelZoom={false}>
         <ChangeView center={props.currCoords} zoom={10} />
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

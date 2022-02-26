@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import '../styles/SearchBar.css'; 
 
 
 function SearchBar(props) {

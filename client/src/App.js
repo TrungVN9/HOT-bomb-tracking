@@ -2,7 +2,7 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 import Map from './components/Map';
 import SearchBar from './components/SearchBar';
-import LocationInfo from './components/LocationInfo';
+import Feed from './components/Feed';
 
 
 const geocode_token = "pk.eyJ1IjoianNoZW4xMiIsImEiOiJjbDA0YmxkN2owOHUxM2RudHF1dTBkZjFmIn0.Sp0jaOXuPrWRgIwM-5ut9Q";
@@ -10,7 +10,7 @@ const geocode_token = "pk.eyJ1IjoianNoZW4xMiIsImEiOiJjbDA0YmxkN2owOHUxM2RudHF1dT
 function App() {
 
   const [query, setQuery] = useState("");
-  const [currCoords, setCurrCoords] = useState([70, 34]);
+  const [currCoords, setCurrCoords] = useState([49, 32]);
 
 
   useEffect( () => {
@@ -36,11 +36,12 @@ function App() {
         query={query}
         setQuery={setQuery}
       />
-      <h4>{query}</h4>
-      <Map 
-        currCoords={currCoords}
-      />
-      <LocationInfo />
+      <div className="main-content">
+        <Map 
+          currCoords={currCoords}
+        />
+        <Feed />
+      </div>
     </div>
   );
 }
