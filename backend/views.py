@@ -5,7 +5,7 @@ import datetime
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
-engine = create_engine('sqlite:///database.db')
+engine = create_engine('sqlite:///backend\\database.db')
 session = Session(engine)
 
 views = Blueprint('views', __name__)
