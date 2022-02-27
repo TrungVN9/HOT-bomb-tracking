@@ -1,0 +1,4 @@
+.searchbar {
+  display: flex;
+  flex-flow: space-between;
+}
