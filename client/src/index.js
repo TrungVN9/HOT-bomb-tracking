@@ -14,7 +14,7 @@ ReactDOM.render(
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin=""
       />
-      </head>
+    </head>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
