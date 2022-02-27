@@ -1,4 +1,11 @@
 .searchbar {
   display: flex;
   flex-flow: space-between;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  size: 50px;
 }

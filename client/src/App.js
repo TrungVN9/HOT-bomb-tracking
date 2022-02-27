@@ -35,8 +35,25 @@ function App() {
 
   useEffect( () => {
     setShowPopup(popupSeen);
-  }, [popupSeen])
+  }, [popupSeen]);
 
+  /*
+  useEffect( () => {
+    let isSubscribed = true;
+
+    const fetchData = async () => {
+      const geocode_uri = "https://api.mapbox.com/geocoding/v5/mapbox.places/"+query+".json?limit=1&access_token="+geocode_token;
+      const data = await fetch(geocode_uri);
+      const object = await data.json();
+      if (isSubscribed) {
+        setPosts(object);
+      }
+    }
+
+    fetchData().catch(console.error);;
+    return () => isSubscribed = false;
+  }, []);
+*/
   return (
     
     <div className="App">

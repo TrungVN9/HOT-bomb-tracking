@@ -25,7 +25,7 @@ function SearchBar(props) {
   return (
     <div className="searchbar">
       <h2>Searchbar goes here :)</h2>
-      <form onSubmit={e => handleSubmit(e)}>
+      <form onSubmit={e => handleSubmit(e)} className="search">
           <input
               type = "text"
               id = "header-search"
@@ -36,7 +36,7 @@ function SearchBar(props) {
           <button type='submit' className='searchButton'>Search</button>
       </form>
 
-      <div className="button" onClick={a => props.setPopupSeen(true)}>
+      <div className="search" onClick={a => props.setPopupSeen(true)}>
         <button>Submit a Post</button>
       </div>
       

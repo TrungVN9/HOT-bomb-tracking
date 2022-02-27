@@ -6,4 +6,15 @@
   height: 90vh;
 }
 .main-content {
+  display: flex;
+}
+
+.map {
+  width: 70%;
+}
+
+.feed {
+  width: 30%;
+  overflow: scroll;
+  height: 90vh;
 }
