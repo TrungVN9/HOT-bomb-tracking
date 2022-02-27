@@ -6,7 +6,6 @@ import { Icon } from "leaflet";
 // import * as parkData from "./data/skateboard-parks.json";
 
 function ChangeView({center, zoom}) {
-  console.log(center);
   const map = useMap();
   map.setView(center, zoom);
   return null;

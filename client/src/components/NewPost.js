@@ -6,23 +6,39 @@ function NewPost(props) {
   const [userInput, setUserInput] = useState(
     {
       location: "USA",
-      content: ""
+      content: "",
+      dangerType: "Bombing",
+      time: "now"
     }
   )
   
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted!");
+    const today = new Date();
+    
     props.setPopupSeen(false);
   }
-  console.log("here");
+
+
+
+
   return (
     <div className="modal">
       <div className="modal-container">
         <form onSubmit={e => handleSubmit(e)} className="modal_content">
+          <select 
+            className="select"
+            placeholder = "choose type"
+            onChange={e => setUserInput({...userInput, dangerType: e.target.value})}
+            required
+          >
+            <option value="Explosion">Explosion</option>
+            <option value="Soldiers">Soldiers</option>
+            <option value="Bombings">Bombings</option>
+          </select>
           <textarea
-            onChange={e => setUserInput({location: "Ukraine", content: e.target.value})}
+            onChange={e => setUserInput({...userInput, content: e.target.value})}
             className="newpostbox"
             placeholder="Write your post here"
           />
