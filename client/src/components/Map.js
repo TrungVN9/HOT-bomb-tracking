@@ -13,6 +13,18 @@ function ChangeView({center, zoom}) {
 
 
 function Map(props) {
+
+
+  const dataToMarker = Array.from(props.posts).map((e) => {
+    return(
+      <Marker position={e.location} icon={ getIcon }>
+        <Popup>
+          {e.location}
+        </Popup>
+      </Marker>
+    )
+  });
+
   return (
     <div className="map">
         {props.showPopup ? <NewPost setPopupSeen={props.setPopupSeen} /> : null}
@@ -28,6 +40,7 @@ function Map(props) {
               {props.currCoords}
             </Popup>
           </Marker>
+          {dataToMarker}
         
       </MapContainer>
     </div>

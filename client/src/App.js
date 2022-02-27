@@ -14,6 +14,7 @@ function App() {
   const [currCoords, setCurrCoords] = useState([49, 32]);
   const [popupSeen, setPopupSeen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [posts, setPosts] = useState({});
 
 
   useEffect( () => {
@@ -49,6 +50,7 @@ function App() {
           currCoords={currCoords}
           showPopup={showPopup}
           setPopupSeen={setPopupSeen}
+          posts={posts}
         />
         <Feed />
       </div>
