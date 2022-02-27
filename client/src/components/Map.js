@@ -2,7 +2,7 @@ import React, {useState, useEffect } from 'react';
 
 import { MapContainer, TileLayer, useMap, Rectangle, Marker, Popup } from 'react-leaflet'
 import NewPost from './NewPost';
-import { Icon } from "leaflet";
+import { getIcon } from './icon'
 // import * as parkData from "./data/skateboard-parks.json";
 
 function ChangeView({center, zoom}) {
@@ -13,11 +13,7 @@ function ChangeView({center, zoom}) {
 
 
 function Map(props) {
-
-
-
   return (
-    
     <div className="map">
         {props.showPopup ? <NewPost setPopupSeen={props.setPopupSeen} /> : null}
         <MapContainer center={[49, 32]} zoom={10} scrollWheelZoom={false}>
@@ -27,7 +23,7 @@ function Map(props) {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               />
-          <Marker position={props.currCoords}>
+          <Marker position={props.currCoords} icon={ getIcon }>
             <Popup>
               {props.currCoords}
             </Popup>
@@ -35,7 +31,6 @@ function Map(props) {
         
       </MapContainer>
     </div>
-    
   );
 }
 
