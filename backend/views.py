@@ -1,13 +1,22 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from .models import Sighting
 from . import db
+import datetime
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+
+
+engine = create_engine('sqlite:///database.db')
+session = Session(engine, future=True)
 
 views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET','POST'])
 def enter_sighting():
     if request.method == 'GET':
-
+        current_time = datetime.datetime.utcnow()
+        two_hours_ago = current_time - datetime.timedelta(hours=2)
+        subjects_within_the_last_two_hours = session.query(Sighting).filter(Sighting.time > two_hours_ago).all()
     if request.method == 'POST':
         #get information
         long = request.form.get('long')
