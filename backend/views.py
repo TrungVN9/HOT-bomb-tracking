@@ -5,13 +5,14 @@ import datetime
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
-engine = create_engine('sqlite:///backend\\database.db')
-session = Session(engine)
+
 
 views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET','POST'])
 def enter_sighting():
+    engine = create_engine('sqlite:///backend\\database.db')
+    session = Session(engine)
     if request.method == 'GET':
         current_time = datetime.datetime.utcnow()
         two_hours_ago = current_time - datetime.timedelta(hours=2)
