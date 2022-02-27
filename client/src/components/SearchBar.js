@@ -19,9 +19,8 @@ function SearchBar(props) {
 
   const handleChange = e => {
     setSearchMessage(e.target.value);
-  };
+  }; 
 
-  
 
   return (
     <div className="searchbar">
@@ -36,6 +35,10 @@ function SearchBar(props) {
           />
           <button type='submit' className='searchButton'>Search</button>
       </form>
+
+      <div className="button" onClick={a => props.setPopupSeen(true)}>
+        <button>Submit a Post</button>
+      </div>
       
     </div>
     
