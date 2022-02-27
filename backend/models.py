@@ -1,6 +1,6 @@
 from . import db, ma
 from sqlalchemy.sql import func
-from sqlalchemy_imageattach.entity import Image, image_attachment
+#from sqlalchemy_imageattach.entity import Image, image_attachment
 
 class Sighting(db.Model):
     id = db.Column(db.Integer, primary_key=True)

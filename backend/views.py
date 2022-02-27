@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
 engine = create_engine('sqlite:///database.db')
-session = Session(engine, future=True)
+session = Session(engine)
 
 views = Blueprint('views', __name__)
 
@@ -15,7 +15,7 @@ def enter_sighting():
     if request.method == 'GET':
         current_time = datetime.datetime.utcnow()
         two_hours_ago = current_time - datetime.timedelta(hours=2)
-        subjects_within_the_last_two_hours = session.query(Sighting).filter(Sighting.time > two_hours_ago).all()
+        subjects_within_the_last_two_hours = session.query(Sighting).filter(Sighting.date > two_hours_ago).all()
         subjects_within_the_last_two_hours_json = sightings_schema.dump(subjects_within_the_last_two_hours)
 
         return jsonify(subjects_within_the_last_two_hours_json)
